@@ -1,0 +1,6 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+\workspace
+README.Rmd
+README.md
+todo.txt
