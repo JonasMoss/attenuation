@@ -4,8 +4,9 @@
 # attenuation <img src="man/figures/logo.png" align="right" width="177" height="65" />
 
 An `R` package for computing confidence curves, confidence intervals and
-p-values for correlation coefficients corrected for attenuation due to
-measurement error.
+*p*-values for [correlation coefficients corrected for attenuation due
+to measurement
+error](https://en.wikipedia.org/wiki/Correction_for_attenuation).
 
 ## Installation
 
@@ -29,6 +30,7 @@ plot(curve, level = 0.90)
 ```
 
 <img src="man/figures/README-simpleuse-1.png" width="750px" />
+
 Confidence sets can be calculated with `ci`. *NB*: These sets are not
 necessarily intervals. They can be either the disjoint union of two
 intervals or empty.
