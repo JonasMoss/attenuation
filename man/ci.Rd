@@ -24,3 +24,8 @@ Numeric in [0, 1]. The p-value under null-hypothesis rho.
 \description{
 Calculate a confidence interval for an attenuated correlation coefficient.
 }
+\examples{
+    r = c(0.20, sqrt(0.45), sqrt(0.55))
+    N = c(100, 100, 100)
+    ci(r, N) # Calculates 95\% confidence set for rho.
+}

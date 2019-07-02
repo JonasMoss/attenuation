@@ -27,3 +27,8 @@ An object of class \code{ccaf}.
 \description{
 Calculate and a confidence curve for for an attenuated correlation coefficient.
 }
+\examples{
+    r = c(0.20, sqrt(0.45), sqrt(0.55))
+    N = c(100, 100, 100)
+    plot(cc(r, N))
+}

@@ -9,6 +9,10 @@
 #' @param level Numeric in [0, 1]. Confidence level of the interval. Defaults to
 #'     0.95.
 #' @return Numeric in [0, 1]. The p-value under null-hypothesis rho.
+#' @examples
+#'     r = c(0.20, sqrt(0.45), sqrt(0.55))
+#'     N = c(100, 100, 100)
+#'     ci(r, N) # Calculates 95% confidence set for rho.
 #' @export
 
 ci = function(r, N, level = 0.95) {

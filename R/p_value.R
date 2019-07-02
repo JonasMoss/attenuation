@@ -8,7 +8,12 @@
 #'     the correlation between the noisy Y' and the true Y.
 #' @param N Numeric vector of three positive integers. \code{N[i]} is the
 #'     sample size for \code{r[i]}.
-#' @return Numeric in [0, 1]. The p-value under null-hypothesis rho.
+#' @return Numeric in [0, 1]. The p-value under the null-hypothesis that the
+#'     true correlation is rho.
+#' @examples
+#'     r = c(0.20, sqrt(0.45), sqrt(0.55))
+#'     N = c(100, 100, 100)
+#'     p_value(rho = 0, r, N) # Tests rho = 0.
 #' @export
 
 p_value = function(rho, r, N) {

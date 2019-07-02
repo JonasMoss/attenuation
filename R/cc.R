@@ -10,6 +10,10 @@
 #' @param upper Upper bound for the curve. Defaults to 1.
 #' @param by Increment of the sequence from \code{lower} to \code{upper}.
 #' @return An object of class \code{ccaf}.
+#' @examples
+#'     r = c(0.20, sqrt(0.45), sqrt(0.55))
+#'     N = c(100, 100, 100)
+#'     plot(cc(r, N))
 #' @export
 
 cc = function(r, N, lower = -1, upper = 1, by = 0.001) {

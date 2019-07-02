@@ -19,8 +19,14 @@ the correlation between the noisy Y' and the true Y.}
 sample size for \code{r[i]}.}
 }
 \value{
-Numeric in [0, 1]. The p-value under null-hypothesis rho.
+Numeric in [0, 1]. The p-value under the null-hypothesis that the
+    true correlation is rho.
 }
 \description{
 Calculate the p-value for an attenuated correlation coefficient.
+}
+\examples{
+    r = c(0.20, sqrt(0.45), sqrt(0.55))
+    N = c(100, 100, 100)
+    p_value(rho = 0, r, N) # Tests rho = 0.
 }
