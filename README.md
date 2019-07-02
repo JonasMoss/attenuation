@@ -5,6 +5,8 @@
 
 [![Travis build
 status](https://travis-ci.org/JonasMoss/attenuation.svg?branch=master)](https://travis-ci.org/JonasMoss/attenuation)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/JonasMoss/attenuation?branch=master&svg=true)](https://ci.appveyor.com/project/JonasMoss/attenuation)
 
 An `R` package for computing confidence curves, confidence intervals and
 *p*-values for [correlation coefficients corrected for attenuation due
