@@ -3,3 +3,4 @@
 \workspace
 README.Rmd
 README.md
+^\.travis\.yml$
