@@ -18,6 +18,7 @@ knitr::opts_chunk$set(
 # attenuation <img src="man/figures/logo.png" align="right" width="177" height="65" />
 [![Travis build status](https://travis-ci.org/JonasMoss/attenuation.svg?branch=master)](https://travis-ci.org/JonasMoss/attenuation)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/JonasMoss/attenuation?branch=master&svg=true)](https://ci.appveyor.com/project/JonasMoss/attenuation)
+[![Codecov test coverage](https://codecov.io/gh/JonasMoss/attenuation/branch/master/graph/badge.svg)](https://codecov.io/gh/JonasMoss/attenuation?branch=master)
 
 
 An `R` package for computing confidence curves, confidence intervals and *p*-values for [correlation coefficients corrected for attenuation due to measurement error](https://en.wikipedia.org/wiki/Correction_for_attenuation).
