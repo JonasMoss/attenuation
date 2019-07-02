@@ -9,6 +9,7 @@ status](https://travis-ci.org/JonasMoss/attenuation.svg?branch=master)](https://
 status](https://ci.appveyor.com/api/projects/status/github/JonasMoss/attenuation?branch=master&svg=true)](https://ci.appveyor.com/project/JonasMoss/attenuation)
 [![Codecov test
 coverage](https://codecov.io/gh/JonasMoss/attenuation/branch/master/graph/badge.svg)](https://codecov.io/gh/JonasMoss/attenuation?branch=master)
+[![DOI](https://zenodo.org/badge/194718529.svg)](https://zenodo.org/badge/latestdoi/194718529)
 
 An `R` package for computing confidence curves, confidence intervals and
 *p*-values for [correlation coefficients corrected for attenuation due
