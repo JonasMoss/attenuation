@@ -3,6 +3,9 @@
 
 # attenuation <img src="man/figures/logo.png" align="right" width="177" height="65" />
 
+[![Travis build
+status](https://travis-ci.org/JonasMoss/attenuation.svg?branch=master)](https://travis-ci.org/JonasMoss/attenuation)
+
 An `R` package for computing confidence curves, confidence intervals and
 *p*-values for [correlation coefficients corrected for attenuation due
 to measurement

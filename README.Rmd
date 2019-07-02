@@ -5,9 +5,6 @@ output:
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-<!-- badges: start -->
-  [![Travis build status](https://travis-ci.org/JonasMoss/attenuation.svg?branch=master)](https://travis-ci.org/JonasMoss/attenuation)
-<!-- badges: end -->
 
 
 ```{r, echo = FALSE}
@@ -18,9 +15,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-
-
 # attenuation <img src="man/figures/logo.png" align="right" width="177" height="65" />
+[![Travis build status](https://travis-ci.org/JonasMoss/attenuation.svg?branch=master)](https://travis-ci.org/JonasMoss/attenuation)
+
 
 An `R` package for computing confidence curves, confidence intervals and *p*-values for [correlation coefficients corrected for attenuation due to measurement error](https://en.wikipedia.org/wiki/Correction_for_attenuation).
 ```{r setup, include=FALSE}
