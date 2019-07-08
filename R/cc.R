@@ -9,6 +9,8 @@
 #' @param lower Lower bound for the curve. Defaults to -1.
 #' @param upper Upper bound for the curve. Defaults to 1.
 #' @param by Increment of the sequence from \code{lower} to \code{upper}.
+#' @param positive Logical; If \code{TRUE}, the correlations \code{r[2]} and
+#'     \code{r[3]} are forced to be positive.
 #' @return An object of class \code{ccaf}.
 #' @examples
 #'     r = c(0.20, sqrt(0.45), sqrt(0.55))
@@ -16,9 +18,9 @@
 #'     plot(cc(r, N))
 #' @export
 
-cc = function(r, N, lower = -1, upper = 1, by = 0.001) {
+cc = function(r, N, lower = -1, upper = 1, by = 0.001, positive = FALSE) {
   rho = seq(lower, upper, by = by)
-  x = 1 - p_value(rho, r, N)
+  x = 1 - p_value(rho, r, N, positive = positive)
   attr(x, "type") = "Confidence curve"
   x
 }
