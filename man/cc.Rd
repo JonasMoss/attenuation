@@ -4,7 +4,7 @@
 \alias{cc}
 \title{Calculate and a confidence curve for for an attenuated correlation coefficient.}
 \usage{
-cc(r, N, lower = -1, upper = 1, by = 0.001)
+cc(r, N, lower = -1, upper = 1, by = 0.001, positive = FALSE)
 }
 \arguments{
 \item{r}{Numeric vector of three elemtents in [-1,1]. \code{r[1]} is the
@@ -20,6 +20,9 @@ sample size for \code{r[i]}.}
 \item{upper}{Upper bound for the curve. Defaults to 1.}
 
 \item{by}{Increment of the sequence from \code{lower} to \code{upper}.}
+
+\item{positive}{Logical; If \code{TRUE}, the correlations \code{r[2]} and
+\code{r[3]} are forced to be positive.}
 }
 \value{
 An object of class \code{ccaf}.

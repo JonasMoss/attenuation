@@ -4,7 +4,7 @@
 \alias{p_value}
 \title{Calculate the p-value for an attenuated correlation coefficient.}
 \usage{
-p_value(rho, r, N)
+p_value(rho, r, N, positive = FALSE)
 }
 \arguments{
 \item{rho}{Numeric vector in [-1,1]. The correlation under the null
@@ -17,6 +17,9 @@ the correlation between the noisy Y' and the true Y.}
 
 \item{N}{Numeric vector of three positive integers. \code{N[i]} is the
 sample size for \code{r[i]}.}
+
+\item{positive}{Logical; If \code{TRUE}, the correlations \code{r[2]} and
+\code{r[3]} are forced to be positive.}
 }
 \value{
 Numeric in [0, 1]. The p-value under the null-hypothesis that the

@@ -4,7 +4,7 @@
 \alias{ci}
 \title{Calculate a confidence interval for an attenuated correlation coefficient.}
 \usage{
-ci(r, N, level = 0.95)
+ci(r, N, level = 0.95, positive = FALSE)
 }
 \arguments{
 \item{r}{Numeric vector of three elemtents in [-1,1]. \code{r[1]} is the
@@ -17,6 +17,9 @@ sample size for \code{r[i]}.}
 
 \item{level}{Numeric in [0, 1]. Confidence level of the interval. Defaults to
 0.95.}
+
+\item{positive}{Logical; If \code{TRUE}, the correlations \code{r[2]} and
+\code{r[3]} are forced to be positive.}
 }
 \value{
 Numeric in [0, 1]. The p-value under null-hypothesis rho.
