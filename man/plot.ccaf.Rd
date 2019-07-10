@@ -14,7 +14,7 @@
 \item{level}{Level to highlight. Defaults to 0.95. If \code{NULL},
 highlights no level.}
 
-\item{...}{Passed to \code{plot}. Not yet implemented.}
+\item{...}{Passed to \code{plot}.}
 }
 \value{
 An invisible copy of \code{x}.

@@ -4,7 +4,7 @@
 \alias{p_value}
 \title{Calculate the p-value for an attenuated correlation coefficient.}
 \usage{
-p_value(rho, r, N, method = "corr")
+p_value(rho, r, N, method = "corr", k = NULL)
 }
 \arguments{
 \item{rho}{Numeric vector in [-1,1]. The correlation under the null

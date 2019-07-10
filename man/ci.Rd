@@ -4,7 +4,7 @@
 \alias{ci}
 \title{Calculate a confidence interval for an attenuated correlation coefficient.}
 \usage{
-ci(r, N, level = 0.95, positive = FALSE)
+ci(r, N, level = 0.95, method = "corr", k = NULL)
 }
 \arguments{
 \item{r}{Numeric vector of three elemtents in [-1,1]. \code{r[1]} is the
@@ -18,8 +18,13 @@ sample size for \code{r[i]}.}
 \item{level}{Numeric in [0, 1]. Confidence level of the interval. Defaults to
 0.95.}
 
-\item{positive}{Logical; If \code{TRUE}, the correlations \code{r[2]} and
-\code{r[3]} are forced to be positive.}
+\item{method}{The type of confidence curve. Can be \code{"corr"},
+\code{"cronbach"}, \code{"HS"} or \code{"free"}. See the details of
+\code{\link{p_value}}.}
+
+\item{k}{Numeric vector of two positive integers. \code{k[i]} is the number
+of testlets for the for \code{r[i+1]}. Only needed for method
+\code{"cronbach"}.}
 }
 \value{
 Numeric in [0, 1]. The p-value under null-hypothesis rho.
