@@ -24,7 +24,7 @@
 ci = function(r, N, level = 0.95, method = "corr", k = NULL) {
 
   if(method == "HS") {
-    z = -qnorm((1 - level)/2)
+    z = -stats::qnorm((1 - level)/2)
     sigma = (1 - r[1]^2)/sqrt(N[1] - 1)
     lower = (r[1] - z*sigma)/(r[2]*r[3])
     upper = (r[1] + z*sigma)/(r[2]*r[3])

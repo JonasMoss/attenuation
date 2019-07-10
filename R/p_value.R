@@ -91,7 +91,7 @@ p_value = function(rho, r, N, method = "corr", k = NULL) {
       }
 
       eps = 0.001
-      optimized = suppressWarnings(optim(par = abs(r[2:3])*(1 - eps),
+      optimized = suppressWarnings(stats::optim(par = abs(r[2:3])*(1 - eps),
                                          fn = fn))
 
       value = 1 - stats::pchisq(optimized$value, df = 3)
@@ -101,7 +101,7 @@ p_value = function(rho, r, N, method = "corr", k = NULL) {
 
     fun = function(rho) {
       sigma = (1 - r[1]^2)/sqrt(N[1] - 1)
-      2*pnorm(-abs(r[1] - rho*(r[2]*r[3])), sd = sigma)
+      2*stats::pnorm(-abs(r[1] - rho*(r[2]*r[3])), sd = sigma)
     }
 
   }

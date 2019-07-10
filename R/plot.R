@@ -60,15 +60,13 @@ plot.ccaf = function(x, y, level = 0.95, ...) {
 #' Add a plot a confidence curve of attenuated correlation coefficients.
 #'
 #' @param x An object of class \code{ccaf}. The confidence curve to plot.
-#' @param y Ignored; supported for compatibility with the \code{plot} generic.
 #' @param type The type of plot.
 #' @param col The color of the curve.
 #' @param lwd The thickness of the curve.
 #' @param ... Passed to \code{lines}.
 #' @return An invisible copy of \code{x}.
 #' @export
-lines.ccaf = function(x, y, level = 0.95, type = "l", col = "red3",
-                      lwd = 2, ...) {
+lines.ccaf = function(x, type = "l", col = "red3", lwd = 2, ...) {
 
   if(length(x) == 1) stop("plot requires more than one p-value.")
 
