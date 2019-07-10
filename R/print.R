@@ -21,13 +21,14 @@ print.ccaf = function(x, digits = 3, ...) {
   cat("Arguments\n")
   cat("    Sample correlations:", signif(r[1], digits),
                                   signif(r[2], digits),
-                                  signif(r[1], digits))
+                                  signif(r[3], digits))
   cat("\n    Sample sizes:", N[1], N[2], N[3])
 
   if(length(x) == 1) {
     cat("\n\nHypothesis test\n")
     cat("    rho =", attr(x, "rho"), "\n")
     cat("    p-value:", signif(x, digits))
+    cat("    method:", attr(x, "method"))
   }
 
   cat("\n\n")
