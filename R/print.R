@@ -28,6 +28,7 @@ print.ccaf = function(x, digits = 3, ...) {
     cat("\n\nHypothesis test\n")
     cat("    rho =", attr(x, "rho"), "\n")
     cat("    p-value:", signif(x, digits))
+    cat("    method:", attr(x, "method"))
   }
 
   cat("\n\n")
