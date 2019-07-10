@@ -4,7 +4,7 @@ test_that("ci", {
   # The CI is disconnected.
   r = c(-0.1, sqrt(0.1), sqrt(0.1))
   N = c(1000, 1000, 10)
-  CI = ci(r, N, 0.95)
+  CI = ci(r, N, 0.95, method = "free")
   expect_equal(class(CI), "list")
   expect_equal(length(CI), 2)
 
