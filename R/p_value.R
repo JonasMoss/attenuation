@@ -30,7 +30,7 @@
 #'     p_value(rho = 0, r, N) # Tests rho = 0.
 #' @export
 
-p_value = function(rho, r, N, method = "corr") {
+p_value = function(rho, r, N, method = "corr", k = NULL) {
 
   if(method == "corr") {
     fun = function(rho) {

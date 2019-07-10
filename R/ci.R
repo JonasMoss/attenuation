@@ -11,6 +11,9 @@
 #' @param method The type of confidence curve. Can be \code{"corr"},
 #'     \code{"cronbach"}, \code{"HS"} or \code{"free"}. See the details of
 #'     \code{\link{p_value}}.
+#' @param k Numeric vector of two positive integers. \code{k[i]} is the number
+#'     of testlets for the for \code{r[i+1]}. Only needed for method
+#'     \code{"cronbach"}.
 #' @return Numeric in [0, 1]. The p-value under null-hypothesis rho.
 #' @examples
 #'     r = c(0.20, sqrt(0.45), sqrt(0.55))
@@ -18,7 +21,7 @@
 #'     ci(r, N) # Calculates 95% confidence set for rho.
 #' @export
 
-ci = function(r, N, level = 0.95, method = "corr") {
+ci = function(r, N, level = 0.95, method = "corr", k = NULL) {
 
   if(method == "HS") {
     z = -qnorm((1 - level)/2)
@@ -30,7 +33,7 @@ ci = function(r, N, level = 0.95, method = "corr") {
 
   alpha = 1 - level
 
-  fun = function(rho, r, N) p_value(rho, r, N, method = method)
+  fun = function(rho, r, N) p_value(rho, r, N, method = method, k = k)
 
   ## If the maximum is less than -(1 - alpha), the CI is  c(-1,1)
   maximum = stats::optimize(f = function(rho) as.numeric(1 - fun(rho, r, N)),
