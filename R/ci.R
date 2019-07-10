@@ -28,6 +28,7 @@ ci = function(r, N, level = 0.95, method = "corr", k = NULL) {
     sigma = (1 - r[1]^2)/sqrt(N[1] - 1)
     lower = (r[1] - z*sigma)/(r[2]*r[3])
     upper = (r[1] + z*sigma)/(r[2]*r[3])
+    if(lower >= 1 | upper <= -1) return(NULL)
     return(c(max(lower, -1), min(upper, 1)))
   }
 
