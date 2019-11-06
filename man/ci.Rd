@@ -7,7 +7,7 @@
 ci(r, N, level = 0.95, method = "corr", k = NULL)
 }
 \arguments{
-\item{r}{Numeric vector of three elemtents in [-1,1]. \code{r[1]} is the
+\item{r}{Numeric vector of three elements in [-1,1]. \code{r[1]} is the
 correlation between the noisy measures X' and Y', \code{r[2]} is the
 correlation between the noisy X' and the true X, while \code{r[3]} is
 the correlation between the noisy Y' and the true Y.}

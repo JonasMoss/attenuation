@@ -10,8 +10,7 @@ Authors@R: c(
 Maintainer: Jonas Moss <jonas.gjertsen@gmail.com>
 Description: Confidence curves, confidence intervals and p-values for 
    correlation coefficients corrected for attenuation due to measurement error.
-   The package implements the methods described in (Moss, 2019) 
-   <https://arxiv.org/abs/1911.01576>.
+   Implements the methods described in (Moss, 2019) <arxiv:1911.01576>.
 License: MIT + file LICENSE
 URL: https://github.com/JonasMoss/attenuation/
 BugReports: https://github.com/JonasMoss/attenuation/issues

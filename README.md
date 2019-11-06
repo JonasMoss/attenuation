@@ -12,6 +12,7 @@ coverage](https://codecov.io/gh/JonasMoss/attenuation/branch/master/graph/badge.
 [![Project Status: Active – The project has reached a stable, usable
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/histogramr)](https://cran.r-project.org/package=attenuation)
 [![DOI](https://zenodo.org/badge/194718529.svg)](https://zenodo.org/badge/latestdoi/194718529)
 
 An `R` package for computing confidence curves, confidence intervals and

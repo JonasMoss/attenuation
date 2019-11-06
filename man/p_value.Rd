@@ -10,7 +10,7 @@ p_value(rho, r, N, method = "corr", k = NULL)
 \item{rho}{Numeric vector in [-1,1]. The correlation under the null
 hypothesis.}
 
-\item{r}{Numeric vector of three elemtents in [-1,1]. \code{r[1]} is the
+\item{r}{Numeric vector of three elements in [-1,1]. \code{r[1]} is the
 correlation between the noisy measures X' and Y', \code{r[2]} is the
 correlation between the noisy X' and the true X, while \code{r[3]} is
 the correlation between the noisy Y' and the true Y. They are the
@@ -33,7 +33,7 @@ Numeric in [0, 1]. The p-value under the null-hypothesis that the
 }
 \description{
 This function calculates four types of p-values for correlations coefficients
-    corrected for attenuation, choosen in "method". The different p-values
+    corrected for attenuation, chosen in "method". The different p-values
     are described in Moss (2019). \code{"corr"} is the correlation based
     p-value, \code{"cronbach"} is the Cronbach alpha based p-value,
     \code{"HS"} is the Hunter-Schmidt p-value, while \code{"free"} is the
