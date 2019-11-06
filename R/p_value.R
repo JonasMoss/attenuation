@@ -1,7 +1,7 @@
 #' Calculate the p-value for an attenuated correlation coefficient.
 #'
 #' This function calculates four types of p-values for correlations coefficients
-#'     corrected for attenuation, choosen in "method". The different p-values
+#'     corrected for attenuation, chosen in "method". The different p-values
 #'     are described in Moss (2019). \code{"corr"} is the correlation based
 #'     p-value, \code{"cronbach"} is the Cronbach alpha based p-value,
 #'     \code{"HS"} is the Hunter-Schmidt p-value, while \code{"free"} is the
@@ -9,7 +9,7 @@
 #'
 #' @param rho Numeric vector in [-1,1]. The correlation under the null
 #'     hypothesis.
-#' @param r Numeric vector of three elemtents in [-1,1]. \code{r[1]} is the
+#' @param r Numeric vector of three elements in [-1,1]. \code{r[1]} is the
 #'     correlation between the noisy measures X' and Y', \code{r[2]} is the
 #'     correlation between the noisy X' and the true X, while \code{r[3]} is
 #'     the correlation between the noisy Y' and the true Y. They are the
@@ -32,76 +32,76 @@
 
 p_value = function(rho, r, N, method = "corr", k = NULL) {
 
-  if(method == "corr") {
+  if (method == "corr") {
     fun = function(rho) {
 
       D_inv = N - 3
       s = atanh(r)
 
       fn = function(theta) {
-        eta = atanh(c(rho*theta[1]*theta[2], theta[1], theta[2]))
-        c(D_inv %*% (eta - s)^2)
+        eta = atanh(c(rho * theta[1] * theta[2], theta[1], theta[2]))
+        c(D_inv %*% (eta - s) ^ 2)
       }
 
       eps = 0.01
       ui = diag(2)
       ci = rep(0, 2)
-      start = pmax(abs(r[2:3]), eps)*(1 - eps)
+      start = pmax(abs(r[2:3]), eps) * (1 - eps)
       optimized = suppressWarnings(stats::constrOptim(theta = start,
                                                       f = fn,
                                                       grad = NULL,
                                                       ui = ui,
                                                       ci = ci))
 
-      value = 1 - stats::pchisq(optimized$value, df = 3)
+      1 - stats::pchisq(optimized$value, df = 3)
 
     }
-  } else if(method == "free") {
+  } else if (method == "free") {
     fun = function(rho) {
 
       D_inv = N - 3
       s = atanh(r)
 
       fn = function(theta) {
-        eta = atanh(c(rho*theta[1]*theta[2], theta[1], theta[2]))
+        eta = atanh(c(rho * theta[1] * theta[2], theta[1], theta[2]))
         c(D_inv %*% (eta - s)^2)
       }
 
       eps = 0.01
 
-      optimized = suppressWarnings(stats::optim(par = r[2:3]*(1 - eps),
+      optimized = suppressWarnings(stats::optim(par = r[2:3] * (1 - eps),
                                                   fn = fn))
 
-      value = 1 - stats::pchisq(optimized$value, df = 3)
+      1 - stats::pchisq(optimized$value, df = 3)
 
     }
-  } else if(method == "cronbach") {
+  } else if (method == "cronbach") {
     fun = function(rho) {
 
-      D_inv = c(N[1] - 3, 2*N[2:3]*(k-1)/k)
+      D_inv = c(N[1] - 3, 2 * N[2:3] * (k - 1) / k)
       s = c(atanh(r[1]),
-            0.5*log(1 - r[2]),
-            0.5*log(1 - r[3]))
+            0.5 * log(1 - r[2]),
+            0.5 * log(1 - r[3]))
 
       fn = function(theta) {
-        eta = c(atanh(rho*sqrt(theta[1])*sqrt(theta[2])),
-                0.5*log(1 - theta[1]),
-                0.5*log(1 - theta[2]))
-        c(D_inv %*% (eta - s)^2)
+        eta = c(atanh(rho * sqrt(theta[1]) * sqrt(theta[2])),
+                0.5 * log(1 - theta[1]),
+                0.5 * log(1 - theta[2]))
+        c(D_inv %*% (eta - s) ^ 2)
       }
 
       eps = 0.001
-      optimized = suppressWarnings(stats::optim(par = abs(r[2:3])*(1 - eps),
+      optimized = suppressWarnings(stats::optim(par = abs(r[2:3]) * (1 - eps),
                                          fn = fn))
 
-      value = 1 - stats::pchisq(optimized$value, df = 3)
+      1 - stats::pchisq(optimized$value, df = 3)
 
     }
-  } else if(method == "HS") {
+  } else if (method == "HS") {
 
     fun = function(rho) {
-      sigma = (1 - r[1]^2)/sqrt(N[1] - 1)
-      2*stats::pnorm(-abs(r[1] - rho*(r[2]*r[3])), sd = sigma)
+      sigma = (1 - r[1] ^ 2) / sqrt(N[1] - 1)
+      2 * stats::pnorm(-abs(r[1] - rho * (r[2] * r[3])), sd = sigma)
     }
 
   }

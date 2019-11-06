@@ -1,15 +1,25 @@
 Package: attenuation
 Type: Package
-Title: attenuation: Correcting for attenuation due to measurement error
-Version: 0.9.2
+Title: Correcting for attenuation due to measurement error
+Version: 1.0.0
 Author: Jonas Moss
+Authors@R: c(
+    person("Jonas", "Moss", , "jonas.gjertsen@gmail.com", role = c("aut", "cre"), 
+      comment = c(ORCID = "0000-0002-6876-6964")
+    ))
 Maintainer: Jonas Moss <jonas.gjertsen@gmail.com>
 Description: Confidence curves, confidence intervals and p-values for 
    correlation coefficients corrected for attenuation due to measurement error.
+   The package implements the methods described in (Moss, 2019) 
+   <https://arxiv.org/abs/1911.01576>.
 License: MIT + file LICENSE
+URL: https://github.com/JonasMoss/attenuation/
+BugReports: https://github.com/JonasMoss/attenuation/issues
 Encoding: UTF-8
 LazyData: true
 Suggests: 
     testthat,
-    covr
+    covr,
+    spelling
 RoxygenNote: 6.1.1
+Language: en-US

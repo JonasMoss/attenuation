@@ -10,9 +10,9 @@
 
 plot.ccaf = function(x, y, level = 0.95, ...) {
 
-  if(length(x) == 1) stop("plot requires more than one p-value.")
+  if (length(x) == 1) stop("plot requires more than one p-value.")
 
-  if(attr(x, "type") == "Confidence curve") {
+  if (attr(x, "type") == "Confidence curve") {
     yy = as.numeric(x)
   } else {
     yy = 1 - as.numeric(x)
@@ -24,9 +24,9 @@ plot.ccaf = function(x, y, level = 0.95, ...) {
   old_mar = graphics::par()$mar
   on.exit(graphics::par(mar = old_mar))
 
-  if(!is.null(level)) graphics::par(mar = old_mar + c(0, 0, 0, 1))
+  if (!is.null(level)) graphics::par(mar = old_mar + c(0, 0, 0, 1))
 
-  value = min(abs(r[1]/(r[2]*r[3])), 1)*sign(r[1]/(r[2]*r[3]))
+  value = min(abs(r[1] / (r[2] * r[3])), 1) * sign(r[1] / (r[2] * r[3]))
 
   supplied = list(...)
   defaults = list(type = "l",
@@ -45,7 +45,7 @@ plot.ccaf = function(x, y, level = 0.95, ...) {
   graphics::abline(v = value, lty = 3, lwd = 1)
   do.call(graphics::lines.default, args)
 
-  if(!is.null(level)) {
+  if (!is.null(level)) {
     graphics::abline(h = level, col = "orange")
     graphics::axis(side = 4, at = level, col = "orange", las = 2)
   }
@@ -68,20 +68,15 @@ plot.ccaf = function(x, y, level = 0.95, ...) {
 #' @export
 lines.ccaf = function(x, type = "l", col = "red3", lwd = 2, ...) {
 
-  if(length(x) == 1) stop("plot requires more than one p-value.")
+  if (length(x) == 1) stop("plot requires more than one p-value.")
 
-  if(attr(x, "type") == "Confidence curve") {
+  if (attr(x, "type") == "Confidence curve") {
     yy = as.numeric(x)
   } else {
     yy = 1 - as.numeric(x)
   }
 
-  xx = attr(x, "rho")
-  r = attr(x, "r")
-
-  value = min(abs(r[1]/(r[2]*r[3])), 1)*sign(r[1]/(r[2]*r[3]))
-
-  graphics::lines.default(x = xx,
+  graphics::lines.default(x = attr(x, "rho"),
                          y = yy,
                          type = type,
                          col = col,
@@ -89,4 +84,5 @@ lines.ccaf = function(x, type = "l", col = "red3", lwd = 2, ...) {
                          ...)
 
   invisible(x)
+
 }

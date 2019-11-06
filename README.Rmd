@@ -19,10 +19,12 @@ knitr::opts_chunk$set(
 [![Travis build status](https://travis-ci.org/JonasMoss/attenuation.svg?branch=master)](https://travis-ci.org/JonasMoss/attenuation)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/JonasMoss/attenuation?branch=master&svg=true)](https://ci.appveyor.com/project/JonasMoss/attenuation)
 [![Codecov test coverage](https://codecov.io/gh/JonasMoss/attenuation/branch/master/graph/badge.svg)](https://codecov.io/gh/JonasMoss/attenuation?branch=master)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![DOI](https://zenodo.org/badge/194718529.svg)](https://zenodo.org/badge/latestdoi/194718529)
 
+An `R` package for computing confidence curves, confidence intervals and *p*-values for [correlation coefficients corrected for attenuation due to measurement error](https://en.wikipedia.org/wiki/Correction_for_attenuation). The package implements the methods described in [Moss, 2019](https://arxiv.org/abs/1911.01576).
 
-An `R` package for computing confidence curves, confidence intervals and *p*-values for [correlation coefficients corrected for attenuation due to measurement error](https://en.wikipedia.org/wiki/Correction_for_attenuation).
+
 ```{r setup, include=FALSE}
 library("attenuation")
 knitr::opts_chunk$set(echo = TRUE)
@@ -30,7 +32,7 @@ knitr::opts_chunk$set(out.width='750px', dpi=200)
 ```
 
 ## Installation
-From inside `R`, use the following command:
+Use the following command from inside `R`.
 ```{r install, echo = TRUE, eval = FALSE}
 # install.packages("devtools")
 devtools::install_github("JonasMoss/attenuation")
@@ -54,8 +56,16 @@ necessarily intervals. They can be either the disjoint union of two intervals or
 ci(r, N)
 ```
 
-To find the *p*-value for the nullhypothesis of a specific rho, use the 
+To find the *p*-value for the null hypothesis of a specific rho, use the 
 `p_value` function.
 ```{R, echo = TRUE, eval = TRUE}
 p_value(rho = 0, r, N)
 ```
+
+## How to Contribute or Get Help
+If you encounter a bug, have a feature request or need some help, open a [Github issue](https://github.com/JonasMoss/attenuation/issues). Create a pull requests
+to contribute. This project follows a [Contributor Code of Conduct](https://www.contributor-covenant.org/version/1/4/code-of-conduct.md).
+
+## References
+
+* [Moss, Jonas. "Correcting for attenuation due to measurement error" (2019)](https://arxiv.org/abs/1911.01576)

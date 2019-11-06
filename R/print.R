@@ -8,10 +8,10 @@
 print.ccaf = function(x, digits = 3, ...) {
   r = attr(x, "r")
   N = attr(x, "N")
-  if(length(x) == 1) {
+  if (length(x) == 1) {
     cat("\np-value for corrected correlation coefficients\n\n")
   } else {
-    if(attr(x, "type") == "Confidence curve") {
+    if (attr(x, "type") == "Confidence curve") {
       cat("\nConfidence curve for corrected correlation coefficients\n\n")
     } else {
       cat("\np-values for corrected correlation coefficients\n\n")
@@ -24,7 +24,7 @@ print.ccaf = function(x, digits = 3, ...) {
                                   signif(r[3], digits))
   cat("\n    Sample sizes:", N[1], N[2], N[3])
 
-  if(length(x) == 1) {
+  if (length(x) == 1) {
     cat("\n\nHypothesis test\n")
     cat("    rho =", attr(x, "rho"), "\n")
     cat("    p-value:", signif(x, digits))

@@ -2,7 +2,7 @@
 % Please edit documentation in R/cc.R
 \name{cc}
 \alias{cc}
-\title{Calculate and a confidence curve for for an attenuated correlation coefficient.}
+\title{Confidence curves for attenuated correlation coefficients.}
 \usage{
 cc(r, N, lower = -1, upper = 1, by = 0.001, method = "corr",
   k = NULL)
@@ -34,7 +34,7 @@ of testlets for the for \code{r[i+1]}. Only needed for method
 An object of class \code{ccaf}.
 }
 \description{
-Calculate and a confidence curve for for an attenuated correlation coefficient.
+Confidence curves for attenuated correlation coefficients.
 }
 \examples{
     r = c(0.20, sqrt(0.45), sqrt(0.55))

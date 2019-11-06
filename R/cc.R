@@ -1,6 +1,6 @@
-#' Calculate and a confidence curve for for an attenuated correlation coefficient.
+#' Confidence curves for attenuated correlation coefficients.
 #'
-#' @param r Numeric vector of three elemtents in [-1,1]. \code{r[1]} is the
+#' @param r Numeric vector of three elements in [-1,1]. \code{r[1]} is the
 #'     correlation between the noisy measures X' and Y', \code{r[2]} is the
 #'     correlation between the noisy X' and the true X, while \code{r[3]} is
 #'     the correlation between the noisy Y' and the true Y.
@@ -22,9 +22,12 @@
 #'     plot(cc(r, N))
 #' @export
 
-cc = function(r, N, lower = -1, upper = 1, by = 0.001, method = "corr", k = NULL) {
+cc = function(r, N, lower = -1, upper = 1, by = 0.001,
+              method = "corr", k = NULL) {
+
   rho = seq(lower, upper, by = by)
   x = 1 - p_value(rho, r, N, method = method, k = k)
   attr(x, "type") = "Confidence curve"
   x
+
 }
