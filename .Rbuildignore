@@ -7,3 +7,5 @@ README.md
 ^appveyor\.yml$
 ^codecov\.yml$
 ^CRAN-RELEASE$
+^cran-comments.md$
+^LICENSE\.md$

@@ -1,16 +1,14 @@
 Package: attenuation
 Type: Package
-Title: Correcting for attenuation due to measurement error
+Title: Correcting for Attenuation Due to Measurement Error
 Version: 1.0.0
-Author: Jonas Moss
 Authors@R: c(
     person("Jonas", "Moss", , "jonas.gjertsen@gmail.com", role = c("aut", "cre"), 
       comment = c(ORCID = "0000-0002-6876-6964")
     ))
-Maintainer: Jonas Moss <jonas.gjertsen@gmail.com>
 Description: Confidence curves, confidence intervals and p-values for 
    correlation coefficients corrected for attenuation due to measurement error.
-   Implements the methods described in (Moss, 2019) <arxiv:1911.01576>.
+   Implements the methods described in Moss (2019, <arxiv:1911.01576>).
 License: MIT + file LICENSE
 URL: https://github.com/JonasMoss/attenuation/
 BugReports: https://github.com/JonasMoss/attenuation/issues

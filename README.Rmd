@@ -33,8 +33,16 @@ knitr::opts_chunk$set(out.width='750px', dpi=200)
 ```
 
 ## Installation
-Use the following command from inside `R`.
+
+Run the following in `R` to install the current CRAN release of the package.
+
 ```{r install, echo = TRUE, eval = FALSE}
+install.packages("attenuation")
+```
+
+Or use `devtools` to install the development version.
+
+```{r install_devtools, echo = TRUE, eval = FALSE}
 # install.packages("devtools")
 devtools::install_github("JonasMoss/attenuation")
 ```

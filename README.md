@@ -24,7 +24,14 @@ package implements the methods described in
 
 ## Installation
 
-Use the following command from inside `R`.
+Run the following in `R` to install the current CRAN release of the
+package.
+
+``` r
+install.packages("attenuation")
+```
+
+Or use `devtools` to install the development version.
 
 ``` r
 # install.packages("devtools")
