@@ -23,6 +23,7 @@ knitr::opts_chunk$set(
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/attenuation)](https://cran.r-project.org/package=attenuation)
 [![DOI](https://zenodo.org/badge/194718529.svg)](https://zenodo.org/badge/latestdoi/194718529)
 
+
 An `R` package for computing confidence curves, confidence intervals and *p*-values for [correlation coefficients corrected for attenuation due to measurement error](https://en.wikipedia.org/wiki/Correction_for_attenuation). The package implements the methods described in [Moss, 2019](https://arxiv.org/abs/1911.01576).
 
 
